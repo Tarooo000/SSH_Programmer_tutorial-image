@@ -1,0 +1,130 @@
+## 関数ってなーに
+
+# 🤖　機械だ,ロボ的な
+
+### 雑な説明
+
+数学でやる.
+
+f(x)と同じ.
+
+その関数を呼び出して値を~~投げる~~渡すと,
+
+内部で処理をして
+
+その処理結果を~~返して~~こちらに渡してくれる.
+
+### 呼び出しってなんだよ
+呼び出してんだよ.
+
+怒られるときには特殊でない限り名前で呼ばれて
+
+~~渋々不満そうに~~素直にいくやろ???
+
+処理をさせるやつの名前をコードの中で書いてやると.
+
+その名前のやつはコードに呼ばれたことに気づいて.
+
+働いてくれる.
+
+### 使いかた
+英語表現でDefineってやらんかった？？？
+
+それの短縮形を使うんや.
+
+```Python3
+def hello():
+  print("hello")
+
+hello()
+```
+結果
+```
+hello
+```
+
+この関数(hello)は何も値を受け取らず,ただ呼び出されると
+helloと表示するだけ.
+
+#### 値をあげよう
+
+```Python3
+def fruit(a,b,c):
+  print(a)
+  print(b)
+  print(c)
+
+fruit("banana","apple",orange)
+```
+結果
+```
+banana
+apple
+orange
+```
+
+#### 便利術
+リストをあげることもできる.しかもリストの形で
+```Python3
+def fruit(fruit_list):
+  print(fruit_list[0])
+  print(fruit_list[1])
+  print(fruit_list[2])
+
+l=["grape","peach","melon"]
+
+fruit(l)
+```
+結果
+```
+grape
+peach
+melon
+```
+#### 値を返そう
+いちいち表示してたら使い物にならん.
+
+だから値を返させよう.
+
+returnを使えばおk
+
+```Python3
+def int_addr(a,b,c):
+  d=a+b+c
+  return d
+
+g=int_addr(3,5,7)
+print(g)
+```
+結果
+```Python3
+15
+```
+#### 便利術
+リストを返すこともできる.
+
+だけどその際には,
+* リストを関数の中で定義する
+* リストを与えてそのリストを加工する
+
+のどちらかじゃないといけない.
+
+ちなみに.appendは,リストの後ろに追加
+
+という意味があります.(重要)
+
+```Python3
+def int_addr(a,b,c):
+  l=[]
+  l.append(a+b)
+  l.append(b+c)
+  l.append(a+c)
+  return l
+
+g=int_addr(3,5,7)
+print(g)
+```
+結果
+```Python3
+[8,12,10]
+```
